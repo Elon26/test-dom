@@ -285,7 +285,7 @@ h6 {
   overflow: hidden;
   color: inherit;
   cursor: pointer;
-  max-width: 13.58vw;
+  max-width: 13.28vw;
 }
 
 .card__footer {
@@ -402,7 +402,7 @@ h6 {
   }
 
   .card__text {
-    max-width: 16.75vw;
+    max-width: 16.35vw;
   }
 }
 
@@ -426,7 +426,7 @@ h6 {
   }
 
   .card__text {
-    max-width: 36vw;
+    max-width: 29vw;
   }
 
   .buttons {
@@ -447,7 +447,7 @@ h6 {
 
 @media (max-width: 610px) {
   .card__text {
-    max-width: 31vw;
+    max-width: 29vw;
   }
 }
 
@@ -475,7 +475,7 @@ h6 {
   }
 
   .card__text {
-    max-width: 33vw;
+    max-width: 31vw;
   }
 
   .card__footer {
