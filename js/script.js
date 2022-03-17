@@ -59,68 +59,28 @@ function sendRequest(url) {
 	})
 }
 
-function convertDate(dataDate) {
-	let year = dataDate.slice(0, 4)
-	let dataMonthNumber = dataDate.slice(5, 7)
-	let dataDay = dataDate.slice(8, 10)
+const convertDate = dataDate => {
+	const newDate = new Date(dataDate);
 
-	let day;
-	if (dataDay.slice(0, 1) === '0') {
-		day = dataDay.slice(1, 2)
+	const dataDay = newDate.getDate();
+	let day = '';
+	if (String(dataDay).length == 1) {
+		day = '0' + dataDay
 	} else {
 		day = dataDay
 	}
 
-	let month;
-	if (dataMonthNumber === '01') {
-		month = 'января'
+	const dataMonth = newDate.getMonth() + 1;
+	let month = '';
+	if (String(dataMonth).length == 1) {
+		month = '0' + dataMonth
 	} else {
-		if (dataMonthNumber === '02') {
-			month = 'февраля'
-		} else {
-			if (dataMonthNumber === '03') {
-				month = 'марта'
-			} else {
-				if (dataMonthNumber === '04') {
-					month = 'апреля'
-				} else {
-					if (dataMonthNumber === '05') {
-						month = 'мая'
-					} else {
-						if (dataMonthNumber === '06') {
-							month = 'июня'
-						} else {
-							if (dataMonthNumber === '07') {
-								month = 'июля'
-							} else {
-								if (dataMonthNumber === '08') {
-									month = 'августа'
-								} else {
-									if (dataMonthNumber === '09') {
-										month = 'сентября'
-									} else {
-										if (dataMonthNumber === '10') {
-											month = 'октября'
-										} else {
-											if (dataMonthNumber === '11') {
-												month = 'ноября'
-											} else {
-												if (dataMonthNumber === '12') {
-													month = 'декабря'
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+		month = dataMonth
 	}
 
-	return `${day} ${month} ${year} г.`;
+	const year = newDate.getFullYear();
+
+	return `${day}.${month}.${year} г.`;
 }
 
 createCards('green');
@@ -164,3 +124,41 @@ searchInput.addEventListener("input", function (e) {
 });
 
 //=================================================================
+
+/*
+// Фильтр и поиск
+
+const identifiers = [1, 4, 3, 6, 7, 2, 5, 9]
+
+const randomString = (prefix) => `${prefix} ${Math.random()}`
+
+const getPage = (identifier) => {
+	const lines = []
+	for (let i = 0; i < 20; ++i) {
+		lines.push(randomString(`page = ${identifier}`))
+	}
+	return lines
+}
+
+const resultLoad = []
+
+const afterGetPage = (lines, page) => {
+	for (let arrItem of lines) {
+		resultLoad.push(arrItem)
+	}
+	resultLoad.sort()
+}
+
+const getLines = search => resultLoad.filter(item => item.includes(search))
+
+
+const load = () => {
+	identifiers.forEach((identifier) => {
+		afterGetPage(getPage(identifier), identifier)
+	})
+}
+
+load()
+
+console.log(getLines(" ").join("\n"))
+*/

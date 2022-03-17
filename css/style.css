@@ -445,12 +445,6 @@ h6 {
   }
 }
 
-@media (max-width: 610px) {
-  .card__text {
-    max-width: 29vw;
-  }
-}
-
 @media (max-width: 581.98px) {
   .container {
     padding: 24px;
@@ -507,12 +501,6 @@ h6 {
         -ms-flex: 1 1 50%;
             flex: 1 1 50%;
     padding: 9px 4px;
-  }
-}
-
-@media (max-width: 510px) {
-  .card__text {
-    max-width: 31vw;
   }
 }
 
